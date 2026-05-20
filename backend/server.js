@@ -39,6 +39,182 @@ let orders = [];
 let users = [];
 let nextOrderId = 1001;
 
+const productMetadata = {
+  1: {
+    description: 'Latest flagship smartphone with 200MP camera, AI-powered video, and long battery life.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Samsung+S25+Ultra+1',
+      'https://via.placeholder.com/600x600?text=Samsung+S25+Ultra+2'
+    ],
+    seller: 'Samsung Official Store',
+    sellerLocation: 'Noida, UP'
+  },
+  2: {
+    description: 'Wireless noise-cancelling earbuds with spatial audio and adaptive transparency.',
+    images: [
+      'https://via.placeholder.com/600x600?text=AirPods+Pro+3+1',
+      'https://via.placeholder.com/600x600?text=AirPods+Pro+3+2'
+    ],
+    seller: 'Apple Store',
+    sellerLocation: 'Bengaluru, KA'
+  },
+  3: {
+    description: '55-inch 4K OLED smart TV with Dolby Vision and voice assistant support.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Sony+OLED+TV+1',
+      'https://via.placeholder.com/600x600?text=Sony+OLED+TV+2'
+    ],
+    seller: 'Sony Electronics',
+    sellerLocation: 'Mumbai, MH'
+  },
+  4: {
+    description: 'High-performance laptop for professionals with premium build and fast processor.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Dell+XPS+15+1',
+      'https://via.placeholder.com/600x600?text=Dell+XPS+15+2'
+    ],
+    seller: 'Dell Official',
+    sellerLocation: 'Pune, MH'
+  },
+  5: {
+    description: 'Lightweight floral summer dress with breathable fabric and modern fit.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Floral+Summer+Dress+1',
+      'https://via.placeholder.com/600x600?text=Floral+Summer+Dress+2'
+    ],
+    seller: 'Fashion Hub',
+    sellerLocation: 'Jaipur, RJ'
+  },
+  6: {
+    description: 'Slim-fit blazer crafted for formal events and sharp everyday styling.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Slim+Fit+Blazer+1',
+      'https://via.placeholder.com/600x600?text=Slim+Fit+Blazer+2'
+    ],
+    seller: 'Urban Attire',
+    sellerLocation: 'Chennai, TN'
+  },
+  7: {
+    description: 'Professional running shoes with responsive cushioning and durable grip.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Running+Shoes+1',
+      'https://via.placeholder.com/600x600?text=Running+Shoes+2'
+    ],
+    seller: 'Sportify',
+    sellerLocation: 'Kolkata, WB'
+  },
+  8: {
+    description: 'Designer handbag in premium leather with secure compartments and chic styling.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Designer+Handbag+1',
+      'https://via.placeholder.com/600x600?text=Designer+Handbag+2'
+    ],
+    seller: 'Luxury Bags',
+    sellerLocation: 'New Delhi, DL'
+  },
+  9: {
+    description: 'Smart LED desk lamp with adjustable brightness and USB charging port.',
+    images: [
+      'https://via.placeholder.com/600x600?text=LED+Desk+Lamp+1',
+      'https://via.placeholder.com/600x600?text=LED+Desk+Lamp+2'
+    ],
+    seller: 'Home Essentials',
+    sellerLocation: 'Ahmedabad, GJ'
+  },
+  10: {
+    description: 'HEPA air purifier with quiet mode and multi-stage filtration for clean air.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Air+Purifier+1',
+      'https://via.placeholder.com/600x600?text=Air+Purifier+2'
+    ],
+    seller: 'PureAir',
+    sellerLocation: 'Surat, GJ'
+  },
+  11: {
+    description: 'Non-stick cookware set for convenient everyday cooking and easy cleanup.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Cookware+Set+1',
+      'https://via.placeholder.com/600x600?text=Cookware+Set+2'
+    ],
+    seller: 'Chef Select',
+    sellerLocation: 'Hyderabad, TS'
+  },
+  12: {
+    description: 'Memory foam pillow designed for better neck support and restful sleep.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Memory+Foam+Pillow+1',
+      'https://via.placeholder.com/600x600?text=Memory+Foam+Pillow+2'
+    ],
+    seller: 'SleepWell',
+    sellerLocation: 'Lucknow, UP'
+  },
+  13: {
+    description: 'Vitamin C serum for brightening and hydration with antioxidant protection.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Vitamin+C+Serum+1',
+      'https://via.placeholder.com/600x600?text=Vitamin+C+Serum+2'
+    ],
+    seller: 'Beauty Bliss',
+    sellerLocation: 'Gurugram, HR'
+  },
+  14: {
+    description: 'Luxury perfume set with rich notes and elegant presentation for gifting.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Perfume+Set+1',
+      'https://via.placeholder.com/600x600?text=Perfume+Set+2'
+    ],
+    seller: 'Fragrance World',
+    sellerLocation: 'Kanpur, UP'
+  },
+  15: {
+    description: '2000W hair dryer with fast drying and multiple heat-speed settings.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Hair+Dryer+1',
+      'https://via.placeholder.com/600x600?text=Hair+Dryer+2'
+    ],
+    seller: 'Salon Pro',
+    sellerLocation: 'Noida, UP'
+  },
+  16: {
+    description: 'Complete skincare ritual kit with cleanser, toner, moisturizer, and glow serum.',
+    images: [
+      'https://via.placeholder.com/600x600?text=Skincare+Kit+1',
+      'https://via.placeholder.com/600x600?text=Skincare+Kit+2'
+    ],
+    seller: 'Glow Cosmetics',
+    sellerLocation: 'Chandigarh, PB'
+  }
+};
+
+const addresses = [];
+const payments = [];
+const locations = [
+  { id: 'delhi', city: 'Delhi', state: 'Delhi', pin: '110001', courier: 'Ecom Express', deliveryDays: '2-4' },
+  { id: 'mumbai', city: 'Mumbai', state: 'Maharashtra', pin: '400001', courier: 'BlueDart', deliveryDays: '2-5' },
+  { id: 'bangalore', city: 'Bengaluru', state: 'Karnataka', pin: '560001', courier: 'DTDC', deliveryDays: '2-5' },
+  { id: 'hyderabad', city: 'Hyderabad', state: 'Telangana', pin: '500001', courier: 'Delhivery', deliveryDays: '2-5' }
+];
+
+const paymentMethods = ['COD', 'UPI', 'Credit Card', 'Debit Card', 'NetBanking', 'Wallet'];
+
+function enrichProduct(product) {
+  return { ...product, ...productMetadata[product.id] };
+}
+
+function getTrackingEvents(order) {
+  const base = [
+    { status: 'placed', title: 'Order placed', timestamp: order.placedAt },
+    { status: 'confirmed', title: 'Order confirmed', timestamp: order.updatedAt || order.placedAt }
+  ];
+  if (order.status === 'shipped' || order.status === 'delivered') {
+    base.push({ status: 'shipped', title: 'Shipped from warehouse', timestamp: order.shippedAt || new Date(Date.now() + 24*3600*1000).toISOString() });
+  }
+  if (order.status === 'delivered') {
+    base.push({ status: 'delivered', title: 'Delivered to destination', timestamp: order.deliveredAt || order.estimatedDelivery });
+  }
+  return base;
+}
+
 /* ══════════════════════════════════════
    PRODUCT ROUTES
 ══════════════════════════════════════ */
@@ -52,6 +228,7 @@ app.get('/api/products', (req, res) => {
   if (sort === 'price_asc') result.sort((a,b) => a.price - b.price);
   else if (sort === 'price_desc') result.sort((a,b) => b.price - a.price);
   else if (sort === 'rating') result.sort((a,b) => b.rating - a.rating);
+  result = result.map(enrichProduct);
   res.json({ success: true, count: result.length, data: result });
 });
 
@@ -59,7 +236,7 @@ app.get('/api/products', (req, res) => {
 app.get('/api/products/:id', (req, res) => {
   const p = products.find(x => x.id === +req.params.id);
   if (!p) return res.status(404).json({ success: false, message: 'Product not found' });
-  res.json({ success: true, data: p });
+  res.json({ success: true, data: enrichProduct(p) });
 });
 
 // POST add product (admin)
@@ -140,9 +317,20 @@ app.post('/api/orders', (req, res) => {
     address: address || {},
     paymentMethod: paymentMethod || 'COD',
     total,
+    paymentStatus: paymentMethod === 'COD' ? 'pending' : 'paid',
+    shipping: {
+      origin: 'Noida, UP',
+      destination: address.city || address.town || 'Unknown',
+      courier: locations.find(l => l.pin === (address.pin || '110001'))?.courier || 'Ecom Express',
+      cost: 99,
+      trackingId: `TRK${nextOrderId}${Date.now()}`
+    },
     status: 'placed',
     placedAt: new Date().toISOString(),
-    estimatedDelivery: new Date(Date.now() + 5*24*3600*1000).toISOString()
+    estimatedDelivery: new Date(Date.now() + 5*24*3600*1000).toISOString(),
+    shipmentEvents: [
+      { status: 'placed', title: 'Order received', timestamp: new Date().toISOString() }
+    ]
   };
 
   orders.push(order);
@@ -158,7 +346,80 @@ app.patch('/api/orders/:id/status', (req, res) => {
   if (!validStatuses.includes(status)) return res.status(400).json({ success: false, message: 'Invalid status' });
   order.status = status;
   order.updatedAt = new Date().toISOString();
+  if (status === 'shipped') {
+    order.shippedAt = new Date().toISOString();
+    order.shipmentEvents.push({ status: 'shipped', title: 'Shipped from warehouse', timestamp: order.shippedAt });
+  }
+  if (status === 'delivered') {
+    order.deliveredAt = new Date().toISOString();
+    order.shipmentEvents.push({ status: 'delivered', title: 'Delivered to destination', timestamp: order.deliveredAt });
+  }
+  if (status === 'cancelled') {
+    order.shipmentEvents.push({ status: 'cancelled', title: 'Order cancelled', timestamp: new Date().toISOString() });
+  }
   res.json({ success: true, data: order });
+});
+
+// GET order tracking details
+app.get('/api/orders/:id/track', (req, res) => {
+  const order = orders.find(o => o.id === +req.params.id);
+  if (!order) return res.status(404).json({ success: false, message: 'Order not found' });
+  res.json({ success: true, data: { trackingId: order.shipping?.trackingId, status: order.status, shipmentEvents: order.shipmentEvents, estimatedDelivery: order.estimatedDelivery } });
+});
+
+// PAYMENT ROUTES
+app.post('/api/payments', (req, res) => {
+  const { orderId, method, amount, details } = req.body;
+  const order = orders.find(o => o.id === +orderId);
+  if (!order) return res.status(404).json({ success: false, message: 'Order not found' });
+  if (!paymentMethods.includes(method)) return res.status(400).json({ success: false, message: 'Invalid payment method' });
+  const payment = {
+    id: payments.length + 1,
+    orderId: order.id,
+    method,
+    amount: amount || order.total,
+    status: method === 'COD' ? 'pending' : 'paid',
+    details: details || {},
+    createdAt: new Date().toISOString()
+  };
+  payments.push(payment);
+  order.paymentStatus = payment.status;
+  res.status(201).json({ success: true, data: payment });
+});
+
+app.get('/api/payments/:id', (req, res) => {
+  const payment = payments.find(p => p.id === +req.params.id);
+  if (!payment) return res.status(404).json({ success: false, message: 'Payment not found' });
+  res.json({ success: true, data: payment });
+});
+
+app.get('/api/payment-methods', (req, res) => {
+  res.json({ success: true, data: paymentMethods });
+});
+
+// ADDRESS ROUTES
+app.get('/api/users/:id/addresses', (req, res) => {
+  const userAddresses = addresses.filter(a => a.userId === +req.params.id);
+  res.json({ success: true, count: userAddresses.length, data: userAddresses });
+});
+
+app.post('/api/users/:id/addresses', (req, res) => {
+  const user = users.find(u => u.id === +req.params.id);
+  if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+  const address = { id: addresses.length + 1, userId: user.id, ...req.body, addedAt: new Date().toISOString() };
+  addresses.push(address);
+  res.status(201).json({ success: true, data: address });
+});
+
+// LOCATION ROUTES
+app.get('/api/locations', (req, res) => {
+  res.json({ success: true, data: locations });
+});
+
+app.get('/api/locations/:id', (req, res) => {
+  const location = locations.find(l => l.id === req.params.id);
+  if (!location) return res.status(404).json({ success: false, message: 'Location not found' });
+  res.json({ success: true, data: location });
 });
 
 /* ══════════════════════════════════════
@@ -213,7 +474,7 @@ app.get('/api/search', (req, res) => {
   const results = products.filter(p =>
     p.name.toLowerCase().includes(q.toLowerCase()) ||
     p.category.toLowerCase().includes(q.toLowerCase())
-  );
+  ).map(enrichProduct);
   res.json({ success: true, count: results.length, data: results });
 });
 
