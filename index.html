@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AdiCart – Your one-stop shop for Electronics, Fashion, Home & Beauty. Best deals every day!" />
+  <meta name="keywords" content="AdiCart, online shopping, deals, electronics, fashion, home, beauty" />
+  <title>AdiCart – Shop the Best Deals</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header class="header" id="header">
+    <div class="header-top">
+      <div class="container header-inner">
+
+        <!-- Logo -->
+        <a href="#" class="logo" id="logo-link" aria-label="AdiCart Home">
+          <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+          <span class="logo-text">Adi<span class="logo-accent">Cart</span></span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+          <select class="search-category" id="search-category" aria-label="Search category">
+            <option data-key="all">All</option>
+            <option data-key="electronics">Electronics</option>
+            <option data-key="fashion">Fashion</option>
+            <option data-key="home">Home</option>
+            <option data-key="beauty">Beauty</option>
+          </select>
+          <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            data-placeholder-key="searchPlaceholder"
+            placeholder="Search for products, brands and more..."
+            aria-label="Search products"
+          />
+          <button class="search-btn" id="search-btn" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <!-- Language Toggle -->
+          <div class="lang-toggle" id="lang-toggle" role="button" tabindex="0" aria-label="Toggle Language" title="Toggle Language">
+            <span class="lang-option" id="lang-en">EN</span>
+            <div class="lang-slider" id="lang-slider"></div>
+            <span class="lang-option" id="lang-hi">HI</span>
+          </div>
+
+          <!-- Account -->
+          <a href="#" class="header-icon" id="account-icon" aria-label="Account">
+            <i class="fas fa-user"></i>
+            <span class="icon-label" data-key="account">Account</span>
+          </a>
+
+          <!-- Wishlist -->
+          <a href="#" class="header-icon" id="wishlist-icon" aria-label="Wishlist">
+            <i class="fas fa-heart"></i>
+            <span class="icon-label" data-key="wishlist">Wishlist</span>
+          </a>
+
+          <!-- Cart -->
+          <a href="#" class="header-icon cart-icon" id="cart-icon-link" aria-label="Cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-badge">0</span>
+            <span class="icon-label" data-key="cart">Cart</span>
+          </a>
+        </div>
+
+        <!-- Hamburger for Mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="container">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#categories" data-key="navCategories"><i class="fas fa-th"></i> Categories</a></li>
+          <li><a href="#deals" data-key="navDeals"><i class="fas fa-tags"></i> Today's Deals</a></li>
+          <li><a href="#products" data-key="navNewArrivals"><i class="fas fa-star"></i> New Arrivals</a></li>
+          <li><a href="#" data-key="navSellers"><i class="fas fa-store"></i> Sell on AdiCart</a></li>
+          <li><a href="#" data-key="navOffers"><i class="fas fa-gift"></i> Offers</a></li>
+          <li><a href="#" data-key="navSupport"><i class="fas fa-headset"></i> Support</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO / BANNER SECTION ===================== -->
+  <section class="hero-section" id="deals">
+    <div class="hero-slider" id="hero-slider">
+      <!-- Slide 1 -->
+      <div class="hero-slide active" id="slide-1">
+        <div class="slide-bg slide-bg-1"></div>
+        <div class="slide-content container">
+          <div class="slide-text">
+            <span class="slide-tag" data-key="heroBadge1">🔥 Limited Time</span>
+            <h1 class="slide-title" data-key="heroTitle1">Today's <br /><span>Mega Deals</span></h1>
+            <p class="slide-desc" data-key="heroDesc1">Up to 70% off on top brands. Don't miss out on the biggest sale of the year!</p>
+            <div class="slide-actions">
+              <a href="#products" class="btn btn-primary" data-key="heroBtn1">Shop Now</a>
+              <a href="#" class="btn btn-outline" data-key="heroBtn2">View All Deals</a>
+            </div>
+            <div class="countdown-timer" id="countdown-1">
+              <div class="timer-block"><span id="h1">05</span><small data-key="hrs">Hrs</small></div>
+              <span class="colon">:</span>
+              <div class="timer-block"><span id="m1">30</span><small data-key="mins">Mins</small></div>
+              <span class="colon">:</span>
+              <div class="timer-block"><span id="s1">00</span><small data-key="secs">Secs</small></div>
+            </div>
+          </div>
+          <div class="slide-image">
+            <div class="hero-product-card">
+              <div class="hero-product-img"><i class="fas fa-mobile-alt"></i></div>
+              <div class="hero-product-info">
+                <span data-key="heroProduct1Name">Samsung Galaxy S25</span>
+                <strong>₹49,999</strong>
+                <del>₹79,999</del>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide" id="slide-2">
+        <div class="slide-bg slide-bg-2"></div>
+        <div class="slide-content container">
+          <div class="slide-text">
+            <span class="slide-tag" data-key="heroBadge2">✨ New Season</span>
+            <h1 class="slide-title" data-key="heroTitle2">New <br /><span>Arrivals</span></h1>
+            <p class="slide-desc" data-key="heroDesc2">Explore the latest trends in Fashion, Electronics and Home Decor.</p>
+            <div class="slide-actions">
+              <a href="#products" class="btn btn-primary" data-key="heroBtn3">Explore Now</a>
+              <a href="#" class="btn btn-outline" data-key="heroBtn4">View Catalogue</a>
+            </div>
+          </div>
+          <div class="slide-image">
+            <div class="hero-product-card card-fashion">
+              <div class="hero-product-img"><i class="fas fa-tshirt"></i></div>
+              <div class="hero-product-info">
+                <span data-key="heroProduct2Name">Trendy Collection</span>
+                <strong>₹999</strong>
+                <del>₹2,499</del>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide" id="slide-3">
+        <div class="slide-bg slide-bg-3"></div>
+        <div class="slide-content container">
+          <div class="slide-text">
+            <span class="slide-tag" data-key="heroBadge3">🏠 Home Fest</span>
+            <h1 class="slide-title" data-key="heroTitle3">Dream <br /><span>Home Deals</span></h1>
+            <p class="slide-desc" data-key="heroDesc3">Transform your space with premium furniture and decor at unbeatable prices.</p>
+            <div class="slide-actions">
+              <a href="#products" class="btn btn-primary" data-key="heroBtn5">Shop Home</a>
+              <a href="#" class="btn btn-outline" data-key="heroBtn6">Interior Ideas</a>
+            </div>
+          </div>
+          <div class="slide-image">
+            <div class="hero-product-card card-home">
+              <div class="hero-product-img"><i class="fas fa-couch"></i></div>
+              <div class="hero-product-info">
+                <span data-key="heroProduct3Name">Luxury Sofa Set</span>
+                <strong>₹24,999</strong>
+                <del>₹45,000</del>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button class="slider-btn slider-prev" id="slider-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-btn slider-next" id="slider-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+
+      <!-- Dots -->
+      <div class="slider-dots" id="slider-dots">
+        <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST BADGES ===================== -->
+  <section class="trust-bar">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <i class="fas fa-shipping-fast"></i>
+        <div><strong data-key="trust1Title">Free Delivery</strong><span data-key="trust1Sub">On orders above ₹499</span></div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-undo-alt"></i>
+        <div><strong data-key="trust2Title">Easy Returns</strong><span data-key="trust2Sub">7-day return policy</span></div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-shield-alt"></i>
+        <div><strong data-key="trust3Title">Secure Payment</strong><span data-key="trust3Sub">100% safe transactions</span></div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-headset"></i>
+        <div><strong data-key="trust4Title">24/7 Support</strong><span data-key="trust4Sub">Always here to help</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORIES SECTION ===================== -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-key="categoriesTitle">Shop by Category</h2>
+        <a href="#" class="see-all" data-key="seeAll">See All <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="categories-scroll-wrapper">
+        <button class="cat-scroll-btn cat-scroll-left" id="cat-left" aria-label="Scroll categories left"><i class="fas fa-chevron-left"></i></button>
+        <div class="categories-track" id="categories-track">
+          <div class="category-card" data-filter="electronics">
+            <div class="cat-icon electronics"><i class="fas fa-laptop"></i></div>
+            <span data-key="catElectronics">Electronics</span>
+          </div>
+          <div class="category-card" data-filter="fashion">
+            <div class="cat-icon fashion"><i class="fas fa-tshirt"></i></div>
+            <span data-key="catFashion">Fashion</span>
+          </div>
+          <div class="category-card" data-filter="home">
+            <div class="cat-icon home"><i class="fas fa-home"></i></div>
+            <span data-key="catHome">Home</span>
+          </div>
+          <div class="category-card" data-filter="beauty">
+            <div class="cat-icon beauty"><i class="fas fa-spa"></i></div>
+            <span data-key="catBeauty">Beauty</span>
+          </div>
+          <div class="category-card" data-filter="sports">
+            <div class="cat-icon sports"><i class="fas fa-dumbbell"></i></div>
+            <span data-key="catSports">Sports</span>
+          </div>
+          <div class="category-card" data-filter="books">
+            <div class="cat-icon books"><i class="fas fa-book"></i></div>
+            <span data-key="catBooks">Books</span>
+          </div>
+          <div class="category-card" data-filter="toys">
+            <div class="cat-icon toys"><i class="fas fa-gamepad"></i></div>
+            <span data-key="catToys">Toys</span>
+          </div>
+          <div class="category-card" data-filter="grocery">
+            <div class="cat-icon grocery"><i class="fas fa-apple-alt"></i></div>
+            <span data-key="catGrocery">Grocery</span>
+          </div>
+        </div>
+        <button class="cat-scroll-btn cat-scroll-right" id="cat-right" aria-label="Scroll categories right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTS SECTION ===================== -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-key="productsTitle">Featured Products</h2>
+        <div class="product-filters">
+          <button class="filter-btn active" data-filter="all" data-key="filterAll">All</button>
+          <button class="filter-btn" data-filter="electronics" data-key="filterElectronics">Electronics</button>
+          <button class="filter-btn" data-filter="fashion" data-key="filterFashion">Fashion</button>
+          <button class="filter-btn" data-filter="home" data-key="filterHome">Home</button>
+          <button class="filter-btn" data-filter="beauty" data-key="filterBeauty">Beauty</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="load-more-wrapper">
+        <button class="btn btn-outline load-more-btn" id="load-more-btn" data-key="loadMore">Load More Products</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROMO BANNER ===================== -->
+  <section class="promo-banner">
+    <div class="container promo-inner">
+      <div class="promo-text">
+        <h2 data-key="promoTitle">Become an AdiCart Seller</h2>
+        <p data-key="promoDesc">Reach millions of customers. Start your business online today for free!</p>
+        <a href="#" class="btn btn-white" data-key="promoBtn">Start Selling</a>
+      </div>
+      <div class="promo-icon"><i class="fas fa-store-alt"></i></div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-col footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+          <span class="logo-text">Adi<span class="logo-accent">Cart</span></span>
+        </a>
+        <p data-key="footerDesc">Your trusted online shopping destination for quality products at the best prices across India.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X" class="social-link"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 data-key="footerLinks">Quick Links</h4>
+        <ul>
+          <li><a href="#" data-key="footerAbout"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#" data-key="footerCareers"><i class="fas fa-chevron-right"></i> Careers</a></li>
+          <li><a href="#" data-key="footerPress"><i class="fas fa-chevron-right"></i> Press</a></li>
+          <li><a href="#" data-key="footerBlog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+          <li><a href="#" data-key="footerAffiliate"><i class="fas fa-chevron-right"></i> Affiliate</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Service -->
+      <div class="footer-col">
+        <h4 data-key="footerCustomer">Customer Service</h4>
+        <ul>
+          <li><a href="#" data-key="footerContact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          <li><a href="#" data-key="footerFaq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+          <li><a href="#" data-key="footerReturns"><i class="fas fa-chevron-right"></i> Returns</a></li>
+          <li><a href="#" data-key="footerTracking"><i class="fas fa-chevron-right"></i> Track Order</a></li>
+          <li><a href="#" data-key="footerPrivacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4 data-key="footerContactInfo">Contact Info</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-map-marker-alt"></i> <span data-key="footerAddress">123 Commerce Street, New Delhi, India</span></li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+911800000000">+91 1800-000-0000</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:support@adicart.in">support@adicart.in</a></li>
+        </ul>
+        <div class="app-badges">
+          <a href="#" class="app-badge" data-key="footerAppStore"><i class="fab fa-apple"></i> App Store</a>
+          <a href="#" class="app-badge" data-key="footerPlayStore"><i class="fab fa-google-play"></i> Play Store</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p data-key="footerCopy">&copy; 2025 AdiCart. All rights reserved.</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-paypal" title="PayPal"></i>
+          <i class="fab fa-cc-amex" title="Amex"></i>
+          <i class="fas fa-university" title="Net Banking"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== CART SIDEBAR ===================== -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar" role="dialog" aria-label="Shopping Cart">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-cart"></i> <span data-key="cartTitle">Your Cart</span></h3>
+      <button class="cart-close" id="cart-close" aria-label="Close cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty" id="cart-empty">
+        <i class="fas fa-cart-plus"></i>
+        <p data-key="cartEmpty">Your cart is empty!</p>
+        <a href="#products" class="btn btn-primary btn-sm" data-key="cartShopNow">Shop Now</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+      <div class="cart-total">
+        <span data-key="cartTotal">Total:</span>
+        <strong id="cart-total-price">₹0</strong>
+      </div>
+      <button class="btn btn-primary w-full" id="checkout-btn" data-key="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ===================== TOAST NOTIFICATION ===================== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ===================== SCROLL TO TOP ===================== -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
